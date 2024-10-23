@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover and visualize the various paylines in slot games with our interactive viewer. Learn how different patterns can enhance your gaming experience!"
+    />
+    <meta
+      name="keywords"
+      content="slot game, paylines, slot machine, interactive viewer, gaming strategies, how to play slots, slot game guide"
+    />
+    <meta name="author" content="Slot Game Team" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (OG) Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Slot Game Paylines Viewer" />
+    <meta
+      property="og:description"
+      content="Explore the different paylines in slot games! Our interactive tool allows you to visualize and understand how paylines work, making your gameplay more enjoyable."
+    />
+    <meta property="og:image" content="./assets/images/pumpkin.png" />
+    <!-- Local path to your logo -->
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Slot Game Paylines Viewer" />
+    <meta
+      name="twitter:description"
+      content="Learn about the various paylines in slot games with our interactive viewer!"
+    />
+    <meta name="twitter:image" content="./assets/images/pumpkin.png" />
+    <!-- Local path to your logo -->
+
+    <title>Slot Game Paylines Visualization</title>
+    <meta
+      name="description"
+      content="Discover and visualize the various paylines in slot games with our interactive viewer. Learn how different patterns can enhance your gaming experience!"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="dist/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css" />
+
+    <style>
+      h1 {
+        color: #f98128;
+        display: block;
+        text-decoration: none;
+        margin-top: 150px;
+        font-family: "Press Start 2P", system-ui;
+      }
+      p {
+        color: #fff;
+      }
+      .slot-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 50px);
+        gap: 5px;
+        margin: 20px auto;
+        width: max-content;
+      }
+
+      .slot-cell {
+        width: 50px;
+        height: 50px;
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        border: 1px solid #ccc;
+      }
+
+      /* Highlighted cell for payline */
+      .highlight {
+        background-color: #f98128;
+      }
+
+      /* Center alignment */
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      select {
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div></div>
+      <ul class="menus">
+        <li><a href="index.html">Slot Game</a></li>
+      </ul>
+    </header>
+
+    <h1>Slot Game Paylines Viewer</h1>
+    <p>Select a payline to visualize:</p>
+
+    <select id="paylineSelect">
+      <option value="">-- Select Payline --</option>
+    </select>
+
+    <div class="slot-grid" id="slotGrid">
+      <!-- Slot cells: 3 rows by 5 columns -->
+      <div class="slot-cell" data-row="0" data-col="0">0</div>
+      <div class="slot-cell" data-row="0" data-col="1">0</div>
+      <div class="slot-cell" data-row="0" data-col="2">0</div>
+      <div class="slot-cell" data-row="0" data-col="3">0</div>
+      <div class="slot-cell" data-row="0" data-col="4">0</div>
+
+      <div class="slot-cell" data-row="1" data-col="0">1</div>
+      <div class="slot-cell" data-row="1" data-col="1">1</div>
+      <div class="slot-cell" data-row="1" data-col="2">1</div>
+      <div class="slot-cell" data-row="1" data-col="3">1</div>
+      <div class="slot-cell" data-row="1" data-col="4">1</div>
+
+      <div class="slot-cell" data-row="2" data-col="0">2</div>
+      <div class="slot-cell" data-row="2" data-col="1">2</div>
+      <div class="slot-cell" data-row="2" data-col="2">2</div>
+      <div class="slot-cell" data-row="2" data-col="3">2</div>
+      <div class="slot-cell" data-row="2" data-col="4">2</div>
+    </div>
+    <div class="bg-radial"></div>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="dist/js/index.js"></script>
+    <script>
+      const paylines = [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1],
+        [2, 2, 2, 2, 2],
+        [0, 1, 2, 1, 0],
+        [2, 1, 0, 1, 2],
+        [0, 0, 1, 2, 0],
+        [2, 2, 1, 0, 2],
+        [0, 1, 1, 1, 0],
+        [2, 1, 1, 1, 2],
+        [1, 0, 0, 0, 1],
+        [1, 2, 2, 2, 1],
+        [0, 1, 2, 2, 1],
+        [2, 1, 0, 0, 1],
+        [0, 0, 2, 2, 0],
+        [2, 2, 0, 0, 2],
+        [1, 0, 1, 2, 1],
+        [1, 2, 1, 0, 1],
+        [0, 2, 2, 1, 0],
+        [2, 0, 0, 1, 2],
+        [1, 1, 0, 2, 1],
+        [2, 0, 1, 0, 2],
+        [0, 2, 1, 2, 0],
+        [1, 1, 2, 0, 1],
+        [1, 2, 0, 1, 1],
+        [2, 1, 2, 1, 0],
+      ];
+
+      const slotGrid = document.getElementById("slotGrid");
+      const paylineSelect = document.getElementById("paylineSelect");
+
+      // Populate the dropdown with paylines
+      paylines.forEach((payline, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = `Payline ${index + 1}`;
+        paylineSelect.appendChild(option);
+      });
+
+      // Clear all highlights
+      function clearHighlights() {
+        document.querySelectorAll(".slot-cell").forEach((cell) => {
+          cell.classList.remove("highlight");
+        });
+      }
+
+      // Highlight the selected payline
+      paylineSelect.addEventListener("change", (event) => {
+        clearHighlights();
+        const selectedPayline = paylines[event.target.value];
+
+        selectedPayline.forEach((row, col) => {
+          const cell = slotGrid.querySelector(
+            `.slot-cell[data-row="${row}"][data-col="${col}"]`
+          );
+          if (cell) cell.classList.add("highlight");
+        });
+      });
+    </script>
+  </body>
+</html>

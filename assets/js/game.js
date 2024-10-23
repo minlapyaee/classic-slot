@@ -45,16 +45,6 @@ document.querySelector('.no-balance-model-parent .overlay').addEventListener('cl
     },
   })
 })
-async function createAudit(info) {
-  const response = await fetch("http://localhost:4000/user/create_audit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userID: user._id, info, balance }),
-  });
-  const res = await response.json();
-}
 document
   .querySelector(".welcome-container")
   .addEventListener("click", function () {
@@ -103,9 +93,6 @@ function spinReels() {
       return;
     }
     balance -= totalBet;
-    createAudit(
-      `You used ${betPerLine} Berperline and ${numPaylines} Payline.`
-    );
     localStorage.setItem("user", JSON.stringify({ ...user, balance }));
     updateBalance();
 

@@ -3,37 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slot Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="New to slot games? Learn how to play slots with our beginner-friendly guide. Discover tips, rules, and strategies to enjoy and win at slot machines."
+    />
+    <meta
+      name="keywords"
+      content="how to play slots, slot game guide, beginner slot games, slot machine tips, learn slots, online casino help, slot strategies"
+    />
+    <meta name="author" content="Slot Game Guide Team" />
+    <meta name="robots" content="index, follow" />
+    <title>How to Play Slot Games - Beginner's Guide</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="dist/css/index.css" />
     <link rel="stylesheet" type="text/css" href="dist/css/style.css" />
   </head>
   <body>
     <header>
-      <div class="fullname"></div>
+      <div></div>
       <ul class="menus">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="audit.html">Audit</a></li>
-        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="payline_visualizer.html">Slot Game Paylines Viewer</a></li>
       </ul>
     </header>
     <img src="./assets/images/pumpkin.png" alt="Background" id="bg-1" />
-    <audio id="spookyAudio" controls  autoplay>
-      <source src="./assets/sound/bg-music.mp3" type="audio/mp3">
+    <audio id="spookyAudio" controls autoplay>
+      <source src="./assets/sound/bg-music.mp3" type="audio/mp3" />
     </audio>
     <audio id="thunderAudio">
-      <source src="./assets/sound/thunder.mp3" type="audio/mp3">
+      <source src="./assets/sound/thunder.mp3" type="audio/mp3" />
     </audio>
     <div class="welcome-container">
       <button>Let's Get Started</button>
     </div>
     <div class="no-balance-model-parent">
       <div class="overlay"></div>
-      <div class="no-balance-model-child">
-        Not enough balance!
-      </div>
+      <div class="no-balance-model-child">Not enough balance!</div>
     </div>
     <div class="game-container">
       <div class="main-container">
@@ -82,12 +92,10 @@
         </div>
         <div class="controls">
           <div id="balance">
-            1,000
+            999999
             <span class="balance-unit">Balance</span>
           </div>
-          <label
-            >Bet <input type="number" id="bet" value="1" min="1" />
-          </label>
+          <label>Bet <input type="number" id="bet" value="1" min="1" /> </label>
           <label
             >Lines (1-25)
             <input type="number" id="paylines" value="1" min="1" max="25" />
